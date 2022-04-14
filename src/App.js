@@ -33,7 +33,6 @@ export default function App()
   const [showLoginRegister, setShowLoginRegister] = useState(false);
   
   useEffect(() => {
-    alert("this is a test");
     const test = localStorage.getItem('logged_in');
     if(test)
     {

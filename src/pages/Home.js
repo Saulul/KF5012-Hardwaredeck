@@ -28,7 +28,7 @@ export default function Home()
         <>
             <main>
                 
-                <h1 style={{display: "none"}}>Home page</h1>
+                <h1 style={{display: "block"}}>Home page</h1>
                 <InfoCarousel/>
                 <Carousel/>
                 <Deals/>
