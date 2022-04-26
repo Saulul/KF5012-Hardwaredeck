@@ -106,7 +106,7 @@ coverage
 # Strapi
 ############################
 
-.env
+# .env  # needed this so I could start the project on another machine
 license.txt
 exports
 *.cache
