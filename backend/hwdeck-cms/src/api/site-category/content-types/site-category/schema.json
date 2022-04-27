@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "site_categories",
+  "info": {
+    "singularName": "site-category",
+    "pluralName": "site-categories",
+    "displayName": "SiteCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CategoryName": {
+      "type": "string",
+      "required": true
+    },
+    "CategoryEnabled": {
+      "type": "boolean",
+      "required": true
+    },
+    "CategoryImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "CategoryRoute": {
+      "type": "string"
+    }
+  }
+}
