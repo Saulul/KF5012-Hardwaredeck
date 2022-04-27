@@ -4,7 +4,8 @@
   "info": {
     "singularName": "site-category",
     "pluralName": "site-categories",
-    "displayName": "SiteCategory"
+    "displayName": "SiteCategory",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,17 +18,19 @@
     },
     "CategoryEnabled": {
       "type": "boolean",
-      "required": true
+      "required": true,
+      "default": true
     },
     "CategoryImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "CategoryRoute": {
       "type": "string"
