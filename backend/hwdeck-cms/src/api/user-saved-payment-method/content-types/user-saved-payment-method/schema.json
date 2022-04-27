@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_saved_payment_methods",
+  "info": {
+    "singularName": "user-saved-payment-method",
+    "pluralName": "user-saved-payment-methods",
+    "displayName": "UserSavedPaymentMethod"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MethodNickname": {
+      "type": "string"
+    },
+    "MethodCardNumber": {
+      "type": "integer",
+      "required": true
+    },
+    "MethodCVV": {
+      "required": true,
+      "type": "integer"
+    },
+    "MethodExpiryDate": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

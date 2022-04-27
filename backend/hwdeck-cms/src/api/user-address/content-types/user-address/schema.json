@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_addresses",
+  "info": {
+    "singularName": "user-address",
+    "pluralName": "user-addresses",
+    "displayName": "UserAddress"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AddressNickname": {
+      "type": "string",
+      "required": false,
+      "unique": false
+    },
+    "AddressRecipient": {
+      "type": "string",
+      "required": true
+    },
+    "AddressLineOne": {
+      "type": "string",
+      "required": true
+    },
+    "AddressLineTwo": {
+      "type": "string"
+    },
+    "AddressCity": {
+      "type": "string",
+      "required": true
+    },
+    "AddressPostcode": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
