@@ -58,6 +58,7 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 
 # Hardwaredeck CMS
 **Strapi headless CMS for sending data to the React front-end.**
+
 By Elliot Potts (W20017851) for KF5012.
 
 ## Installing
