@@ -58,3 +58,16 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 
 # Hardwaredeck CMS
 Strapi headless CMS for sending data to the front-end.
+
+## Installing
+The CMS can be hosted locally with Node from this folder.
+
+*Downloading the node_modules*
+```bash
+npm install
+```
+*Running the development server*
+```bash
+node run strapi develop
+```
+The Strapi server will now be running on http://localhost:1337
