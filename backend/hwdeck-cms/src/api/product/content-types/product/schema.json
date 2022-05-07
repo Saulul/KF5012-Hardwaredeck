@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ProductName": {
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 45
+    },
+    "ProductDescription": {
+      "type": "text",
+      "required": true
+    },
+    "ProductPrice": {
+      "type": "decimal",
+      "required": true
+    },
+    "ProductImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "site_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::site-category.site-category"
+    }
+  }
+}

@@ -16,11 +16,6 @@
       "type": "string",
       "required": true
     },
-    "CategoryEnabled": {
-      "type": "boolean",
-      "required": false,
-      "default": true
-    },
     "CategoryImage": {
       "type": "media",
       "multiple": false,
@@ -31,9 +26,6 @@
         "videos",
         "audios"
       ]
-    },
-    "CategoryRoute": {
-      "type": "string"
     }
   }
 }
