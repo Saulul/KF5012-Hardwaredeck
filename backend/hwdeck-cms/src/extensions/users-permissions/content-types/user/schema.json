@@ -63,11 +63,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "user_addresses": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::user-address.user-address"
-    },
     "user_saved_payment_methods": {
       "type": "relation",
       "relation": "oneToMany",
@@ -78,6 +73,14 @@
       "required": true
     },
     "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "userAddress": {
+      "type": "string",
+      "required": true
+    },
+    "userPostcode": {
       "type": "string",
       "required": true
     }
