@@ -861,20 +861,26 @@ footer ul li a:hover
 }
 .banner
 {
-    background-color: var(--banners);
     width: 100%;
-    height: 45px;
+    height: 240px;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
-    padding: 10px;
-    border-radius: var(--borderRadius);
-    text-align: center;
     box-shadow: 2px 2px 5px 1px var(--boxShadow);
+    /*background-color: var(--banners);*/
+    /*padding: 10px;*/
+    /*border-radius: var(--borderRadius);*/
+    /*text-align: center;*/
+}
+.banner img
+{
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
 }
 .video
 {
     width: 100%;
-    height: 300px;
+    height: 500px;
     border-radius: var(--borderRadius);
     box-shadow: 2px 2px 5px 1px var(--boxShadow);
     margin: auto;
