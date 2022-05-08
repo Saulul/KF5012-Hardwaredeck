@@ -8,7 +8,9 @@ import '../css/style.css';
 import Carousel from 'react-bootstrap/Carousel';
 
 //Images
-import motherboard from '../images/motherboard.jpg';
+import carousel_1 from '../images/carousel-1.jpg';
+import carousel_2 from '../images/carousel-2.jpg';
+import carousel_3 from '../images/carousel-3.jpg';
 
 
 
@@ -22,7 +24,7 @@ export default function CarouselImages()
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src={motherboard}
+                        src={carousel_1}
                         alt="First slide"
                         />
                         <Carousel.Caption>
@@ -30,17 +32,28 @@ export default function CarouselImages()
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="holder.js/800x400?text=Second slide&bg=282c34"
+                        src={carousel_2}
                         alt="Second slide"
                         />
 
                         <Carousel.Caption>
                         <h3>Second slide label</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={carousel_3}
+                            alt="Third slide"
+                        />
+
+                        <Carousel.Caption>
+                            <h3>Third slide label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>

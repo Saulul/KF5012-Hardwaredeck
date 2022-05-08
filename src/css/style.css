@@ -610,8 +610,7 @@ footer ul li a:hover
 /*--- Carousel showing images ---*/
 .imageCarousel img
 {
-    height: 360px;
-    object-fit: scale-down;
+    height: 650px;
 }
 
 
