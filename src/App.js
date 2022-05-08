@@ -18,6 +18,7 @@ import Error from './pages/ErrorPage';
 import Login from './pages/LoginPage';
 import Register from './pages/RegisterPage';
 import AddBlogPage from './pages/AddBlogPage';
+import OrderSuccess from "./pages/OrderSuccess";
 
 //Page Components
 import Header from './components/Header';
@@ -144,7 +145,7 @@ export default function App()
           <Route path="/blogs/add_blog" element={<AddBlogPage/>} exact/>
           <Route path="/cart" element={<Cart/>} exact/>
           <Route path="*" element={<Error/>}/>
-
+          <Route path="/order_success" element={<OrderSuccess/>} exact/>
           <Route path="/signin" element={<Login setUser={setUser}/>}/>
           <Route path="/register" element={<Register/>}/>
         </Routes>
