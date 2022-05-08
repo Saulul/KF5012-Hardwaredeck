@@ -1,6 +1,6 @@
 //React Components
 import React, {useEffect, useState} from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 //CSS 
 import '../css/style.css';
@@ -16,9 +16,9 @@ export default function Checkout()
     const [cartItems, setCartItems] = useState();
     const [user, setUser] = useState();
 
+    let subtotal = 0.00;
 
-    const navigate = useNavigate();
-    //upon page render
+
     useEffect(() => {
         document.title = "Hardwaredeck | Checkout";
         document.body.scrollTop = 0;
@@ -32,11 +32,7 @@ export default function Checkout()
             const loggedInUser = JSON.parse(getUser);
             setUser(loggedInUser);
         }
-        else
-        {
-            navigate('/');
-        }
-    }, [navigate])
+    }, [])
 
 
     //retrive passed state data
@@ -46,8 +42,6 @@ export default function Checkout()
     }, [location])
 
 
-    let subtotal = 0.00;
-    //fucntion to calculate VAT
     function calculateVAT()
     {
         let vat = (subtotal/5).toFixed(2);
@@ -99,7 +93,11 @@ export default function Checkout()
                     <p>VAT: <i>£{calculateVAT()}</i></p>
                     <p>Delivery fee: <i>£5.00</i></p>
                     <p className='checkoutTotal'><strong>Total: <i>£{(subtotal + parseFloat(calculateVAT()) + 5.00).toFixed(2)}</i></strong></p>
-                    <button className='button' onClick={() => alert("Order has been placed")}>Order</button>
+                    <form action="http://localhost:4242/create-checkout-session" method="POST">
+                        <button className='button' type="submit">
+                            Checkout
+                        </button>
+                    </form>
                 </section>
             </main>
         </>
