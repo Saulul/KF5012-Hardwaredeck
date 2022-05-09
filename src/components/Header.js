@@ -57,9 +57,6 @@ export default function Header({displayNavMethod, user, setUser})
                             :
                             <Link to='/signin' className='icon'>
                                 <FontAwesomeIcon icon={faUser}/>
-                                <div className='headerText'>
-                                    Login / Signin
-                                </div>
                             </Link>
                         }
 
