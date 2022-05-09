@@ -601,18 +601,6 @@ footer ul li a:hover
     color: var(--navyBlue);
 }
 
-/*--- Carousel showing images ---*/
-.imageCarousel img
-{
-    height: 650px;
-	object-fit: scale-down;
-}
-
-
-
-
-
-
 /*------ Product list, Blog posts and home page deals ------*/
 /*--- Deals ---*/
 .productsSection, .blogsSection
