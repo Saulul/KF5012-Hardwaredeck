@@ -18,11 +18,11 @@ export default function BackToTop()
     {
         if(document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)
         {
-        setBackToTopBTN(true);
+            setBackToTopBTN(true);
         }
         else
         {
-        setBackToTopBTN(false);
+            setBackToTopBTN(false);
         }
     }
 

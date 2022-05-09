@@ -105,20 +105,6 @@ export default function App()
 
 
 
-  //When before page unloads
-  //check if the page is relading
-  //if not reloading then clear local storage
-  window.onbeforeunload = function()
-  {
-    let data = window.performance.getEntriesByType("navigation")[0].type;
-    if(data !== "reload")
-    {
-      localStorage.clear();
-    }
-  }
-
-
-
   return (
     <Router>
       <div className='grid_container'>

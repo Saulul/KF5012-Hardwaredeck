@@ -26,8 +26,8 @@ export default function Header({displayNavMethod, user, setUser})
     function logout()
     {
         setUser();
-        navigate('/');
         localStorage.clear();
+        navigate('/');
     }
 
     return (
@@ -42,12 +42,8 @@ export default function Header({displayNavMethod, user, setUser})
                         {
                             user
                             ?
-                            <div className='icon dropdownContainer userIcon'>
+                            <div className='icon dropdownContainer'>
                                 <FontAwesomeIcon icon={faUser}/>
-                                
-                                <div className='headerText'>
-                                    {user.fname} {user.lname}
-                                </div>
 
                                 <div className='profileDropdownContent'>
                                     <div className='dropdownPointer'></div>
@@ -59,7 +55,7 @@ export default function Header({displayNavMethod, user, setUser})
                                 </div>
                             </div>
                             :
-                            <Link to='/signin' className='icon userIcon'>
+                            <Link to='/signin' className='icon'>
                                 <FontAwesomeIcon icon={faUser}/>
                                 <div className='headerText'>
                                     Login / Signin

@@ -165,6 +165,7 @@ export default function ProductList()
     //retrieve the category from the url
     const {catName} = useParams();
     //Upon update of catName
+    //check if data is passed over the URL
     useEffect(() => {
         if(catName !== undefined)
         {
@@ -207,6 +208,8 @@ export default function ProductList()
     }, [cartItems, user]);
 
 
+
+    
     //page number changes go back to top of the screen
     useEffect(() => {
         document.body.scrollTop = 0;

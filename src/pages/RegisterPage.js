@@ -32,8 +32,6 @@ export default function Register()
     {
         event.preventDefault();
         alert("This feature will be implemented in future updates");
-
-        navigate('/');
     }
 
 

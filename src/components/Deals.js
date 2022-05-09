@@ -8,10 +8,6 @@ import '../css/style.css';
 import Card from 'react-bootstrap/Card'
 
 
-//Images
-
-
-
 
 export default function Deals()
 {
@@ -23,7 +19,7 @@ export default function Deals()
                     <Card>
                         <Card.Img variant="top" src="holder.js/100px180" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Deal 1</Card.Title>
                             <Card.Text>
                                 Description:
                                 Some quick example text to build on the card 
@@ -39,22 +35,7 @@ export default function Deals()
                     <Card>
                         <Card.Img variant="top" src="holder.js/100px180" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Text>
-                                Description:
-                                Some quick example text to build on the card 
-                                title and make up the bulk of
-                                the card's content.
-                                <br/>
-                                Price: £10
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-
-                    <Card>
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Deal 2</Card.Title>
                             <Card.Text>
                                 Description:
                                 Some quick example text to build on the card 
@@ -69,7 +50,22 @@ export default function Deals()
                     <Card>
                         <Card.Img variant="top" src="holder.js/100px180" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Deal 3</Card.Title>
+                            <Card.Text>
+                                Description:
+                                Some quick example text to build on the card 
+                                title and make up the bulk of
+                                the card's content.
+                                <br/>
+                                Price: £10
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+
+                    <Card>
+                        <Card.Img variant="top" src="holder.js/100px180" />
+                        <Card.Body>
+                            <Card.Title>Deals 4</Card.Title>
                             <Card.Text>
                                 Description:
                                 Some quick example text to build on the card 

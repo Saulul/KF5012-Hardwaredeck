@@ -17,7 +17,6 @@ import carousel_6 from '../images/carousel-3-mob.jpg';
 
 
 
-
 export default function CarouselImages()
 {
     return (
@@ -29,30 +28,20 @@ export default function CarouselImages()
                             <source media="(min-width: 768px)" srcSet={carousel_1} />
                             <img src={carousel_4} className="d-block w-100" alt="First slide"/>
                         </picture>
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
+					
                     <Carousel.Item>
                         <picture>
                             <source media="(min-width: 768px)" srcSet={carousel_2} />
                             <img src={carousel_5} className="d-block w-100" alt="Second slide"/>
                         </picture>
-                        <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
+					
                     <Carousel.Item>
                         <picture>
                             <source media="(min-width: 768px)" srcSet={carousel_3} />
                             <img src={carousel_6} className="d-block w-100" alt="Third slide"/>
                         </picture>
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
             </section>

@@ -1,6 +1,6 @@
 //React Components
 import React, {useEffect, useState} from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 //CSS 
 import '../css/style.css';
@@ -16,9 +16,10 @@ export default function Checkout()
     const [cartItems, setCartItems] = useState();
     const [user, setUser] = useState();
 
-    let subtotal = 0.00;
 
 
+    const navigate = useNavigate();
+    //Upon page render
     useEffect(() => {
         document.title = "Hardwaredeck | Checkout";
         document.body.scrollTop = 0;
@@ -27,12 +28,22 @@ export default function Checkout()
 
         //check if user has logged in
         const getUser = localStorage.getItem('user');
+        const getCart = localStorage.getItem('cart');
+
         if(getUser)
         {
             const loggedInUser = JSON.parse(getUser);
             setUser(loggedInUser);
         }
-    }, [])
+        else if(!getUser)
+        {
+            navigate('/');
+        }
+        else if(!getCart)
+        {
+            navigate('/cart');
+        }
+    }, [navigate])
 
 
     //retrive passed state data
@@ -42,6 +53,8 @@ export default function Checkout()
     }, [location])
 
 
+
+    let subtotal = 0.00;
     function calculateVAT()
     {
         let vat = (subtotal/5).toFixed(2);

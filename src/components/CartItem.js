@@ -13,20 +13,22 @@ import {faXmark} from '@fortawesome/free-solid-svg-icons';
 
 
 
-export default function CartItem({item, changeQuantity, removeItem, })
+export default function CartItem({item, changeQuantity, removeItem})
 {
     return (
         <>
             <div className='cartItem'>
                 <div className='cartImg'>
-                    <img src={img} alt='test'/>
+                    <img src={img} alt='placeholder'/>
                 </div>
 
                 <div className='cartName'>
                     <strong>{item.name}</strong>
                 </div>
 
-                <div className='cartPrice'><i>£{item.price}</i></div>
+                <div className='cartPrice'>
+                    <i>£{item.price}</i>
+                </div>
 
                 <div className='cartQuantity'>Qty: 
                     <input id='quantity' onChange={(event) => changeQuantity(item.id, event.target.value)} defaultValue={item.quantity}/>
@@ -38,5 +40,4 @@ export default function CartItem({item, changeQuantity, removeItem, })
             </div>
         </>
     );
-
 }

@@ -68,7 +68,7 @@ export default function Profile()
                         <>
                             <ProfileInfo user={user}/>
                             {
-                                user.type === "admin"
+                                user.role === "admin"
                                 ?
                                 <>
                                     <AddProduct/>

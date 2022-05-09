@@ -42,8 +42,8 @@ export default function NavMenu({displayNav, displayNavMethod, user, setUser, ca
     function logout()
     {
         setUser();
-        navigate('/');
         localStorage.clear();
+        navigate('/');
     }
 
 
