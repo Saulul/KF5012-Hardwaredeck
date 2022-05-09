@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # BACKEND FILES
-/backend
+#/backend
 
 # STOP REACT README
 README.md
