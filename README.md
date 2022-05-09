@@ -32,7 +32,7 @@ git clone https://github.com/Saulul/KF5012-Hardwaredeck
 npm install
 ```
 
-*Installing Tensorflow*
+<!-- *Installing Tensorflow*
 ```bash
 npm install @tensorflow/tfjs @tensorflow-models/toxicity
 ```
@@ -40,7 +40,7 @@ npm install @tensorflow/tfjs @tensorflow-models/toxicity
 *Installing Axios*
 ```bash
 npm install Axios
-```
+``` -->
 
 *Running the CMS development server*
 ```bash
