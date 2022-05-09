@@ -130,12 +130,6 @@ header a
     text-decoration: none;
 }
 
-/*--- Login text ---*/
-.headerText
-{
-    display: none;
-}
-
 /*--- Account dropdown ---*/
 .dropdownContainer
 {
@@ -606,6 +600,16 @@ footer ul li a:hover
 {
     color: var(--navyBlue);
 }
+
+/*--- Carousel showing images ---*/
+.imageCarousel img
+{
+    height: 650px;
+	object-fit: scale-down;
+}
+
+
+
 
 
 
@@ -1335,25 +1339,6 @@ footer ul li a:hover
     .banner {
         height: 215px;
     }
-
-
-    /*--- Header ---*/
-    .userIcon
-    {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: right;
-        width: auto !important;
-    }
-    /*--- Login text ---*/
-    .headerText
-    {
-        display: flex;
-        align-items: center;
-        height: 100%;
-    }
-
 
 
     /*------ Account page ------*/
