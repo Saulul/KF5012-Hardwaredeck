@@ -83,6 +83,15 @@
     "userPostcode": {
       "type": "string",
       "required": true
+    },
+    "userRole": {
+      "type": "enumeration",
+      "enum": [
+        "default",
+        "admin"
+      ],
+      "required": true,
+      "default": "default"
     }
   }
 }
