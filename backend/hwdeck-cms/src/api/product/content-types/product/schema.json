@@ -20,7 +20,9 @@
     },
     "ProductDescription": {
       "type": "text",
-      "required": true
+      "required": true,
+      "minLength": 3,
+      "maxLength": 255
     },
     "ProductPrice": {
       "type": "decimal",
