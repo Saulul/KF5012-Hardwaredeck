@@ -41,23 +41,23 @@ export default function BlogPost({blog})
         <>
             <Card>
                 <Card.Header>
-                    Posted by: {blog.user}
+                    Posted by: {blog.attributes.BlogAuthor.data.attributes.username}
                 </Card.Header>
 
-                <Link to={'/blog/' + nameSplit(blog.title)} state={blog}>
+                <Link to={'/blog/' + nameSplit(blog.attributes.BlogTitle)} state={blog}>
                     <Card.Img variant="top" src="holder.js/100px180" />
                 </Link>
 
                 <Card.Body>
                     <Card.Title>
-                        <Link to={'/blog/' + nameSplit(blog.title)} state={blog}>
-                            {blog.title}
+                        <Link to={'/blog/' + nameSplit(blog.attributes.BlogTitle)} state={blog}>
+                            {blog.attributes.BlogTitle}
                         </Link>
                     </Card.Title>
                 </Card.Body>
 
                 <Card.Footer>
-                    Uploaded on: {blog.date}
+                    Uploaded on: {blog.attributes.publishedAt.slice(0, 10)}
                 </Card.Footer>
             </Card>
         </>

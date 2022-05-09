@@ -5,6 +5,7 @@ import React from 'react';
 import '../css/style.css';
 
 //Video
+import video from '../videos/video.mp4'
 
 //images
 import banner_1 from '../images/banner-1.jpg';
@@ -25,7 +26,7 @@ export default function Banners()
                             <img alt="banner" src={banner_2}/>
                         </div>
                     </div>
-                    <div className='video'><strong>Video Placeholder</strong></div>
+                    <video src={video} controls/>
                 </div>
 
             </section>

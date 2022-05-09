@@ -48,7 +48,7 @@ export default function Header({displayNavMethod, user, setUser})
                                 <div className='profileDropdownContent'>
                                     <div className='dropdownPointer'></div>
                                     <ul>
-                                        <li><Link to={'/my_account/' + user.fname + '_' + user.lname}>Your account</Link></li>
+                                        <li><Link to={'/my_account/' + user.user.firstName + '_' + user.user.lastName}>Your account</Link></li>
                                         <hr/>
                                         <li onClick={logout}>Logout</li>
                                     </ul>

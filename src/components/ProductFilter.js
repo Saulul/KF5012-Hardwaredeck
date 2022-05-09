@@ -24,7 +24,7 @@ export default function ProductFilter({setSortBy, categories, setCategory})
                                 categories
                                 ?
                                 categories.map(category => {
-                                    return <option key={category.name} value={category.name}>{category.name}</option>
+                                    return <option key={category.attributes.CategoryName} value={category.attributes.CategoryName}>{category.attributes.CategoryName}</option>
                                 })
                                 :
                                 null

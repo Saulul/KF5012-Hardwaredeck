@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
+import axios from 'axios';
+
 //CSS 
 import '../css/style.css';
 
@@ -21,18 +23,11 @@ export default function NavMenu({displayNav, displayNavMethod, user, setUser, ca
     const [categories, setCategories] = useState();
 
     useEffect(() => {
-        const tempCats = [
-            {
-                name: 'Motherboards'
-            }, 
-            {
-                name: 'graphics cards' 
-            },
-            {
-                name: 'CPU'
-            }
-        ];
-        setCategories(tempCats);
+        //fetch products product
+        axios.get('http://localhost:1337/api/site-categories')
+        .then(res => {
+            setCategories(res.data.data);
+       })
     }, [])
 
 
@@ -95,7 +90,7 @@ export default function NavMenu({displayNav, displayNavMethod, user, setUser, ca
                                         categories
                                         ?
                                         categories.map(category => {
-                                            return <li key={category.name}><Link to={"/shop/cat/" + categorySplit(category.name)}>{category.name}</Link></li>
+                                            return <li key={category.attributes.CategoryName}><Link to={"/shop/cat/" + categorySplit(category.attributes.CategoryName)}>{category.attributes.CategoryName}</Link></li>
                                         })
                                         :
                                         <Loader/>
@@ -112,7 +107,7 @@ export default function NavMenu({displayNav, displayNavMethod, user, setUser, ca
                             {
                                 user
                                 ?
-                                <NavLink activeClassName="active" to={"/my_account/" + user.fname + "_" + user.lname}>Your Account</NavLink>
+                                <NavLink activeClassName="active" to={"/my_account/" + user.user.firstName + "_" + user.user.lastName}>Your Account</NavLink>
                                 :
                                 <NavLink activeClassName="active" to='/signin'>Sign in</NavLink>
                             }

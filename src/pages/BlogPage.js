@@ -18,11 +18,14 @@ export default function Blog()
 {
     const [blog, setBlog] = useState();
 
+    //upon page load
     useEffect(() => {
         document.title = "Hardwaredeck | Blogs";
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }, []);
+
+
 
     //retrieve passed state data
     const location = useLocation();
@@ -39,15 +42,19 @@ export default function Blog()
                     ?
                     <>
                         <section className='blog'>
-                            <h2>{blog.title}</h2>
-                            <p><i>Published on {blog.date} by {blog.user}</i></p>
+                            <h2>{blog.attributes.BlogTitle}</h2>
+                            <p>
+                                <i>
+                                    Published on {blog.attributes.publishedAt.slice(0, 10)} by {blog.attributes.BlogAuthor.data.attributes.username}
+                                </i>
+                            </p>
 
                             <div className='blogImage'>
                                 <img src={motherboard} alt="motherboard"/>
                             </div>
 
                             <div className='blogText'>
-                                <p>{blog.content}</p>
+                                <p>{blog.attributes.BlogContent}</p>
                             </div>
                         
                         </section>

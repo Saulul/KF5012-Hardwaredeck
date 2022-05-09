@@ -19,15 +19,15 @@ export default function CartItem({item, changeQuantity, removeItem})
         <>
             <div className='cartItem'>
                 <div className='cartImg'>
-                    <img src={img} alt='placeholder'/>
+                    <img src={item.attributes.ProductImage.data.attributes.formats.medium.URL} alt='placeholder'/>
                 </div>
 
                 <div className='cartName'>
-                    <strong>{item.name}</strong>
+                    <strong>{item.attributes.ProductName}</strong>
                 </div>
 
                 <div className='cartPrice'>
-                    <i>£{item.price}</i>
+                    <i>£{item.attributes.ProductPrice}</i>
                 </div>
 
                 <div className='cartQuantity'>Qty: 

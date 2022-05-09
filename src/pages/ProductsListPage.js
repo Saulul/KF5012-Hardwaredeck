@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 
+import axios from 'axios';
+
 //CSS 
 import '../css/style.css';
 
@@ -34,102 +36,10 @@ export default function ProductList()
 
 
         //fetch products product
-        const tempProducts = [
-            {
-                id: 1,
-                name: 'Motherboard 1',
-                price: 50.01,
-                cat: 'Motherboards'
-            },
-            {
-                id: 2,
-                name: 'graphics card 1',
-                price: 25.99,
-                cat: 'graphics cards'
-            },
-            {
-                id: 3,
-                name: 'Intel 5 CPU 1',
-                price: 100.00,
-                cat: 'CPU'
-            },
-            {
-                id: 4,
-                name: 'Motherboard 2',
-                price: 100.00,
-                cat: 'Motherboards'
-            },
-            {
-                id: 5,
-                name: 'graphics card 2',
-                price: 100.00,
-                cat: 'graphics cards'
-            },
-            {
-                id: 6,
-                name: 'Intel 5 CPU 2',
-                price: 100.00,
-                cat: 'CPU'
-            },
-            {
-                id: 7,
-                name: 'Motherboard 3',
-                price: 100.00,
-                cat: 'Motherboards'
-            },
-            {
-                id: 8,
-                name: 'graphics card 3',
-                price: 100.00,
-                cat: 'graphics cards'
-            },
-            {
-                id: 9,
-                name: 'Intel 5 CPU 3',
-                price: 100.00,
-                cat: 'CPU'
-            },
-            {
-                id: 10,
-                name: 'Motherboard 4',
-                price: 100.00,
-                cat: 'Motherboards'
-            },
-            {
-                id: 11,
-                name: 'graphics card 4',
-                price: 100.00,
-                cat: 'graphics cards'
-            },
-            {
-                id: 12,
-                name: 'Intel 5 CPU 4',
-                price: 100.00,
-                cat: 'CPU'
-            },
-            {
-                id: 13,
-                name: 'Motherboard 5',
-                price: 100.00,
-                cat: 'Motherboards'
-            },
-            {
-                id: 14,
-                name: 'graphics card 5',
-                price: 100.00,
-                cat: 'graphics cards'
-            },
-            {
-                id: 15,
-                name: 'Intel 5 CPU 5',
-                price: 100.00,
-                cat: 'CPU'
-            }
-        ]
-        //set products
-        setProducts(tempProducts);
-
-
+        axios.get('http://localhost:1337/api/products?populate=*')
+        .then(res => {
+            setProducts(res.data.data);
+        })
 
 
         //check if user has logged in
@@ -250,7 +160,7 @@ export default function ProductList()
         }
         else
         {
-            return products.filter(product => product.cat === category);
+            return products.filter(product => product.attributes.site_category.data.attributes.CategoryName === category);
         }
     }
 
@@ -261,8 +171,8 @@ export default function ProductList()
         {
             case 'descend':
                 products.sort((a, b) => {
-                    let na = a.name.toLowerCase()
-                    let nb = b.name.toLowerCase()
+                    let na = a.attributes.ProductName.toLowerCase()
+                    let nb = b.attributes.ProductName.toLowerCase()
 
                     if(na > nb)
                     {
@@ -278,20 +188,20 @@ export default function ProductList()
 
             case 'hPrice':
                 products.sort((a, b) => {
-                    return b.price - a.price;
+                    return b.attributes.ProductPrice - a.attributes.ProductPrice;
                 });
                 break;
 
             case 'lPrice':
                 products.sort((a, b) => {
-                    return a.price - b.price;
+                    return a.attributes.ProductPrice - b.attributes.ProductPrice;
                 });
                 break;
 
             default:
                 products.sort((a, b) => {
-                    let na = a.name.toLowerCase()
-                    let nb = b.name.toLowerCase()
+                    let na = a.attributes.ProductName.toLowerCase()
+                    let nb = b.attributes.ProductName.toLowerCase()
 
                     if(na < nb)
                     {

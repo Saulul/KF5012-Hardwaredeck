@@ -40,17 +40,17 @@ export default function Product({product, addProductsToCart, user})
     return (
         <>
             <Card>
-                <Link to={'/products/view/' + nameSplit(product.name)} state={product}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                <Link to={'/products/view/' + nameSplit(product.attributes.ProductName)} state={product}>
+                    <Card.Img variant="top" src={product.attributes.ProductImage.data.attributes.formats.medium.URL} />
                 </Link>
                 <Card.Body>
                     <Card.Title>
-                        <Link to={'/products/view/' + nameSplit(product.name)} state={product}>
-                            {product.name}
+                        <Link to={'/products/view/' + nameSplit(product.attributes.ProductName)} state={product}>
+                            {product.attributes.ProductName}
                         </Link>
                     </Card.Title>
                     <Card.Text>
-                        Price: £{product.price}
+                        Price: £{product.attributes.ProductPrice}
                     </Card.Text>
                     {
                         user

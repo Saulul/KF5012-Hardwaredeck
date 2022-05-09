@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import axios from 'axios';
+
 //CSS 
 import '../css/style.css';
 
@@ -46,18 +48,6 @@ export default function Login({setUser})
     }
 
 
-    const tempUser = {
-        fname: "Strongest",
-        lname: "Avenger",
-        email: "test@test.com",
-        password: "password",
-        role: "admin",
-        phone: 354456453,
-        address: 'Classified',
-        postCode: 'Unknown'
-      };
-
-
     //test for logging in (placeholder)
     async function login(event)
     {
@@ -65,34 +55,38 @@ export default function Login({setUser})
 
         const confirmMessage = document.getElementById("confirmMessage");
 
-        if(email !== tempUser.email || password !== tempUser.password)
+        
+
+        //date to be passed to server-side
+        const data = {
+            "identifier": email,
+            "password": password
+        };
+
+
+        let loginError;
+        let response;
+        try
+        {
+            response = await axios.post("http://localhost:1337/api/auth/local", data);
+        }
+        catch(error)
         {
             confirmMessage.setAttribute("style", "color: red; display: block;");
             confirmMessage.innerHTML = "<p>Details incorrect, try again</p>";
+            loginError = true
         }
-        else
+
+        if(!loginError)
         {
-            const user = {
-                fname: tempUser.fname,
-                lname: tempUser.lname,
-                email: tempUser.email,
-                role: tempUser.role,
-                phone: tempUser.phone,
-                address: tempUser.address,
-                postCode: tempUser.postCode
-            }
-
-
-
-
             //store user in local storage
-            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(response.data));
             
             //set state of the user
-            setUser(tempUser);
+            setUser(response.data);
 
             confirmMessage.setAttribute("style", "color: green; display: block;");
-            confirmMessage.innerHTML = "<p>Welcome " + user.fname + " " + user.lname + "</p>";
+            confirmMessage.innerHTML = "<p>Welcome " + response.data.user.firstName + " " + response.data.user.lastName + "</p>";
             confirmMessage.innerHTML += "<p>You are now logged in, please wait 5 seconds</p>";
 
             setTimeout(() => navigate('/'), 5000)

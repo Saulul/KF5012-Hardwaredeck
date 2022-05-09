@@ -9,8 +9,6 @@ import '../css/style.css';
 import ProfileInfo from '../components/ProfileInfo';
 import Orders from '../components/ProfileOrders';
 import DeliveryAddress from '../components/DeliveryAddress';
-import AddProduct from '../components/AddProduct';
-import EditProduct from '../components/EditProduct';
 import YourBlogs from '../components/UserBlogs';
 import Loader from '../components/Loader';
 
@@ -47,7 +45,7 @@ export default function Profile()
     useEffect(() => {
         if(user)
         {
-            document.title = "Your Account | " + user.fname + " " + user.lname;
+            document.title = "Your Account | " + user.user.firstName + " " + user.user.lastName;
         }
         else
         {
@@ -67,16 +65,6 @@ export default function Profile()
                         ?
                         <>
                             <ProfileInfo user={user}/>
-                            {
-                                user.role === "admin"
-                                ?
-                                <>
-                                    <AddProduct/>
-                                    <EditProduct/>
-                                </>
-                                :
-                                null
-                            }
                             <Orders/>
                             <DeliveryAddress/>
                             <YourBlogs/>

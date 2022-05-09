@@ -2,6 +2,8 @@
 import React, {useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 
+import axios from 'axios';
+
 //CSS 
 import '../css/style.css';
 
@@ -26,115 +28,13 @@ export default function BlogPostList()
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
 
-        //temp product
-        const tempBlogs = [
-            {
-                id: 1,
-                title: 'This is blog 1',
-                date: '29/1/2019',
-                content: 'Hello this is a blog 1',
-                user: 'strongest avenger'
-            },
-            {
-                id: 2,
-                title: 'This is blog 2',
-                date: '10/2/2000',
-                content: 'Hello this is a blog 2',
-                user: 'strongest avenger'
-            },
-            {
-                id: 3,
-                title: 'This is blog 3',
-                date: '1/5/2022',
-                content: 'Hello this is a blog 3',
-                user: 'strongest avenger'
-            },
-            {
-                id: 4,
-                title: 'This is blog 4',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 5,
-                title: 'This is blog 5',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 6,
-                title: 'This is blog 6',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 7,
-                title: 'This is blog 7',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 8,
-                title: 'This is blog 8',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 9,
-                title: 'This is blog 9',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 10,
-                title: 'This is blog 10',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 11,
-                title: 'This is blog 11',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 12,
-                title: 'This is blog 12',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 13,
-                title: 'This is blog 13',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 14,
-                title: 'This is blog 14',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            },
-            {
-                id: 15,
-                title: 'This is blog 15',
-                date: '10/2/2000',
-                content: 'Hello this is a blog',
-                user: 'strongest avenger'
-            }
-        ]
-        setBlogs(tempBlogs);
+
+        //fetch products product
+        axios.get('http://localhost:1337/api/blogposts?populate=*')
+        .then(res => {
+            console.log(res.data.data);
+            setBlogs(res.data.data);
+        })
 
 
 
@@ -168,8 +68,8 @@ export default function BlogPostList()
         {
             case 'descend':
                 blogs.sort((a, b) => {
-                    let na = a.title.toLowerCase()
-                    let nb = b.title.toLowerCase()
+                    let na = a.attributes.BlogTitle.toLowerCase()
+                    let nb = b.attributes.BlogTitle.toLowerCase()
 
                     return na > nb ? -1 : na < nb ? 1 : 0
                 });
@@ -177,24 +77,24 @@ export default function BlogPostList()
 
             case 'newest':
                 blogs.sort((a, b) => {
-                    a = a.date.split('/').reverse().join('');
-                    b = b.date.split('/').reverse().join('');
+                    a = a.attributes.publishedAt.slice(0, 10).split('-').join('');
+                    b = b.attributes.publishedAt.slice(0, 10).split('-').join('');
                     return a < b ? 1 : a > b ? -1 : 0;
                 });
                 return blogs;
 
             case 'oldest':
                 blogs.sort((a, b) => {
-                    a = a.date.split('/').reverse().join('');
-                    b = b.date.split('/').reverse().join('');
+                    a = a.attributes.publishedAt.slice(0, 10).split('-').join('');
+                    b = b.attributes.publishedAt.slice(0, 10).split('-').join('');
                     return a > b ? 1 : a < b ? -1 : 0;
                 });
                 return blogs;
 
             default:
                 blogs.sort((a, b) => {
-                    let na = a.title.toLowerCase()
-                    let nb = b.title.toLowerCase()
+                    let na = a.attributes.BlogTitle.toLowerCase()
+                    let nb = b.attributes.BlogTitle.toLowerCase()
 
                     return na < nb ? -1 : na > nb ? 1 : 0
                 });
