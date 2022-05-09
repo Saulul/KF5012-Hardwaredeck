@@ -14,6 +14,7 @@ KF5012 module files for a React-Strapi based ecommerce platform selling computer
 - /src/
 - package-lock.json
 - package.json
+- server.js *(Stripe server ran concurrently with the React application)*
 
 **Back-end CMS files**
 - /backend/
