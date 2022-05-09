@@ -16,13 +16,13 @@
       "type": "string",
       "default": "BlogTitle",
       "required": true,
-      "maxLength": 25,
+      "maxLength": 50,
       "minLength": 2
     },
     "BlogContent": {
       "type": "text",
       "required": true,
-      "maxLength": 500,
+      "maxLength": 2500,
       "minLength": 2
     },
     "BlogAuthor": {
