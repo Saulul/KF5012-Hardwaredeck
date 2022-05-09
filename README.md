@@ -49,6 +49,8 @@ The Strapi CMS server will now be running on http://localhost:1337.
 npm start
 ```
 
+The React application is now running alongisde the Stripe server at http://localhost:3000.
+
 ## Deployment
 *Not yet deployed. To be updated.*
 
