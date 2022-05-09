@@ -1,5 +1,7 @@
 
 # Hardwaredeck Database Mission
 
-Databases schema and files produced by Stefan Kovacs (W20000442).
+Database schema and files produced by Stefan Kovacs (W20000442).
+
+Used for implementing Strapi content-types.
 
