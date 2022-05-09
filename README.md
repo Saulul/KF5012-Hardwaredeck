@@ -37,6 +37,11 @@ npm install
 npm install @tensorflow/tfjs @tensorflow-models/toxicity
 ```
 
+*Installing Axios*
+```bash
+npm install Axios
+```
+
 *Running the CMS development server*
 ```bash
 cd backend/hwdeck-cms
